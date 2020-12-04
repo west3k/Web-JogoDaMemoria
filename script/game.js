@@ -1,4 +1,16 @@
 let game = {
+    techs: [
+        'bootstrap',
+        'css',
+        'electron',
+        'firebase',
+        'html',
+        'javascript',
+        'jquery',
+        'mongo',
+        'node',
+        'react'
+    ],
 
     lockMode: false,
     firstCard: null,
@@ -41,18 +53,9 @@ let game = {
         this.clearCards()
     },
 
-    techs: [
-        'bootstrap',
-        'css',
-        'electron',
-        'firebase',
-        'html',
-        'javascript',
-        'jquery',
-        'mongo',
-        'node',
-        'react'
-    ],
+    checkGameOver: function(){
+       return this.cards.filter(card => !card.flipped).length == 0;
+    },
 
     cards: null,
 
